@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    My Blog
+{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock css_files %}
+
+{% block content %}
+    <header id = "main-navigation">
+        <h1><a href="">phuquocchamp's blogs</a></h1>
+        <nav>
+            <a href="">All Posts</a>
+        </nav>
+    </header>
+
+    <section>
+        <header id="welcome">
+            <img src="{% static "blog/images/phuquocchamp.jpg"%}" alt="phuquocchamp - the author of this blog">
+            <h2>phuquocchamp</h2>
+        </header>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit voluptatem quod molestias sint officia. Aspernatur ab beatae laboriosam perferendis, harum minus suscipit nulla? Unde, dolore libero nihil suscipit aspernatur commodi.</p>
+    </section>
+
+    <section id = "latest-post">
+        <h2>My lastet Thoughts</h2>
+
+
+        <ul>
+            <li>
+                <article class="post">
+                    <a href="">
+                        <img src="{% static "blog/images/forest.jpg"%}" alt="Mountain Hiking"/>
+                        <div class="post__content">
+                            <h3>Mountain Hiking</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque id unde expedita temporibus sed nulla consequuntur aspernatur quod quibusdam! Blanditiis possimus consectetur eum quidem corrupti maxime perferendis, exercitationem enim ducimus.</p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+        </ul>
+
+    </section>
+
+
+    <section id="about">
+        <h2>What I do</h2>
+        <p>I am a software developer, and my passion is to create beautiful websites.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis est quo corrupti quos at in perferendis consequuntur magni fugit, dolores reprehenderit, minus voluptates. Eligendi, minus laboriosam numquam a quis officia.</p>
+    </section>
+
+
+{% endblock content %}
