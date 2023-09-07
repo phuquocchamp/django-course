@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  db:
+    image: mysql:8
+    volumes:
+      - ./data/db:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=crmdb
+      - MYSQL_USER=phuquocchamp
+      - MYSQL_PASSWORD=123456
+      - MYSQL_ROOT_PASSWORD=admin123
+#       MYSQL_PASSWORD là password của user quản lí database trên.
+#       MYSQL_ROOT_PASSWORD là password dùng để quản trị toàn bộ databse
+      - MYSQL_HOST=db
+    ports:
+      - "3307:3306"
+  phpmyadmin:
+    image: phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin123
+    restart: unless-stopped
+
+# mysql --protocol=tcp -h localhost -P 3307 -u root -p
+# ALTER USER 'root'@'localhost' INDENTIFIED WITH mysql_native_password BY '@dz251914423700';
+# FLUSH PRIVILEGES;
